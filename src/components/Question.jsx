@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import Options from "./Option";
 
@@ -47,16 +47,24 @@ function Question(props) {
 	};
 
 	return (
-		<div className="mcq-block">
-			{questionType === 2 && <img src={props.flag} className="flag" alt="" />}
-			<h2 className="question">{question}</h2>
-			<Options {...optionProps} />
-			<div className="next-button-div">
-				<button hidden={correctOption === false} onClick={handleNext}>
-					Next
-				</button>
+		<>
+			<img
+				className="quiz-image"
+				src="/images/undraw_adventure_4hum 1.svg"
+				alt=""
+			/>
+
+			<div className="mcq-block">
+				{questionType === 2 && <img src={props.flag} className="flag" alt="" />}
+				<h2 className="question">{question}</h2>
+				<Options {...optionProps} />
+				<div className="next-button-div">
+					<button hidden={correctOption === false} onClick={handleNext}>
+						Next
+					</button>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 

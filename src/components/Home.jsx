@@ -17,7 +17,7 @@ const Home = () => {
 		// 		.then((res) => {
 		// 			setCountryInfo(res.data);
 		// 		});
-		// // }
+		// }
 		async function getCountriesInfo() {
 			axios.get("http://127.0.0.1:9999/").then((res) => {
 				setCountryInfo(res.data);

@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useRef } from "react";
 import Question from "./Question";
 import Result from "./Result";
 const { generateQuestion } = require("../scripts/generateQuestion");
 
 const QuizContent = ({ countryInfo }) => {
+	const [gameStatus, setGameStatus] = useState("playing");
 	const [MCQ, setMCQ] = useState(() => generateQuestion(countryInfo));
-	const scoreRef = useRef(1);
+	const scoreRef = useRef(0);
 
 	// console.log(countryInfo[104]);
 	const genNewMCQ = () => {
@@ -17,11 +17,15 @@ const QuizContent = ({ countryInfo }) => {
 	};
 
 	return (
-		<div className="quiz-content">
-			<img src="/images/undraw_adventure_4hum 1.svg" className="quiz-image" />
-			<h1>COUNTRY QUIZ</h1>
-			<Question {...MCQ} genNewMCQ={genNewMCQ} />
-			{/* <Result /> */}
+		<div className="quiz">
+			<h1 className="quiz-title">COUNTRY QUIZ</h1>
+			<div className="quiz-content">
+				{gameStatus === "playing" ? (
+					<Question {...MCQ} genNewMCQ={genNewMCQ} />
+				) : (
+					<Result score={scoreRef.current} />
+				)}
+			</div>
 		</div>
 	);
 };
