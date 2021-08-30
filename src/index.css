@@ -9,6 +9,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+html{
+  font-size: 16px;
+}
+
 body{
   background-position: center;
   background-repeat: no-repeat;
@@ -17,11 +21,11 @@ body{
 
 :root{
   --title-text-color: #F2F2F2;
-  --title-text-size: 36px;
+  --title-text-size: 2.25rem;
   --title-text-weight: 700;
 
   --question-text-color: #2F527B;
-  --question-text-size: 24px;
+  --question-text-size: 1.5rem;
   --question-text-weight: 700;
 
   --option-hover-color: #F9A826;
@@ -62,7 +66,7 @@ body{
 
 
 .home{
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -70,9 +74,9 @@ body{
 }
 
 .quiz-content{
-  width: 465px;
+  width: 29rem;
   position: relative;
-  min-height: 400px;
+  min-height: 25rem;
   border-radius: 24px;
   background-color: white;
   padding: 30px;
@@ -86,9 +90,9 @@ body{
 .quiz-image{
   position: absolute;
   right: 0;
-  top: -55px;
-  height: 100px;
-  margin-top: -10px;
+  top: -3.4375rem;
+  height: 6.25rem;
+  /* margin-top: -10px; */
 }
 
 .mcq-block{
@@ -112,7 +116,7 @@ body{
 .options{
   /* border: 1px solid black; */
   /* margin-top: 10px; */
-  height: 300px;
+  height: 18.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -121,7 +125,7 @@ body{
 .option{
   border: 1px solid var(--option-border-color);
   border-radius: 10px;
-  min-height: 50px;
+  min-height: 3rem;
   color: var(--option-text-color);
   font-weight: 500;
   padding: 0 0 0 20px;
@@ -177,23 +181,23 @@ body{
 }
 
 .result-image{
-  max-width: 240px;
+  max-width: 15rem;
   margin: 20px 0 50px 0;
 }
 
 .result-text{
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
 }
 
 .result-score{
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
 }
 
 .score{
   font-weight: 700;
-  font-size: 40px;
+  font-size: 2.4rem;
 }
 .score::before, .score::after{
   content: " ";
@@ -205,9 +209,9 @@ body{
   border: 2px solid var(--results-text-color);
   border-radius: 12px;
   width: 55%;
-  height: 60px;
+  height: 3.75rem;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--results-text-color);
 }
 
@@ -220,4 +224,41 @@ body{
 .btn{
   transition: ease;
   transition-duration: 0.1s;
+}
+
+.about-me{
+  font-family: arial;
+  font-size: 0.875rem;
+  color: rgb(2, 2, 2);
+  position: absolute;
+  bottom: 5px;
+
+}
+.about-me a{
+  color :white;
+}
+
+
+@media only screen and (max-width: 600px) {
+  html{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  html{
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html{
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  html{
+    font-size: 9px;
+  }
 }
