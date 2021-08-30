@@ -9,21 +9,29 @@ const QuizContent = ({ countryInfo }) => {
 	const [MCQ, setMCQ] = useState(() => generateQuestion(countryInfo));
 	const scoreRef = useRef(0);
 
-	// console.log(countryInfo[104]);
-	const genNewMCQ = () => {
+	function genNewMCQ() {
 		scoreRef.current += 1;
-		const newMCQ = generateQuestion(countryInfo);
-		setMCQ(newMCQ);
-	};
+		setMCQ(generateQuestion(countryInfo));
+	}
+
+	function resetGame() {
+		setMCQ(generateQuestion(countryInfo));
+		scoreRef.current = 0;
+		setGameStatus("playing");
+	}
 
 	return (
 		<div className="quiz">
 			<h1 className="quiz-title">COUNTRY QUIZ</h1>
 			<div className="quiz-content">
 				{gameStatus === "playing" ? (
-					<Question {...MCQ} genNewMCQ={genNewMCQ} />
+					<Question
+						{...MCQ}
+						genNewMCQ={genNewMCQ}
+						setGameStatus={setGameStatus}
+					/>
 				) : (
-					<Result score={scoreRef.current} />
+					<Result score={scoreRef.current} resetGame={resetGame} />
 				)}
 			</div>
 		</div>

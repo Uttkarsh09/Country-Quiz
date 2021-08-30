@@ -121,20 +121,19 @@ body{
 .option{
   border: 1px solid var(--option-border-color);
   border-radius: 10px;
-  height: 50px;
-  display: flex;
-  align-items: center;
+  min-height: 50px;
   color: var(--option-text-color);
   font-weight: 500;
+  padding: 0 0 0 20px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10% auto 10%;
 }
-.option h3{
-  display: inline;
-  margin: auto 15px;
-  position: relative;
-}
-.option span{
-  margin-left: 30px;
-}
+
+/* .option span, .option div{
+  border: 1px solid black;
+} */
+
 .option:hover{
   background-color: var(--option-hover-color);
   cursor: pointer;
@@ -145,8 +144,8 @@ body{
 }
 
 .icon{
-  position: absolute;
-  right: 3rem;
+  position: relative;
+  top: 3px;
 }
 
 .next-button-div{
@@ -210,4 +209,15 @@ body{
   font-weight: 600;
   font-size: 18px;
   color: var(--results-text-color);
+}
+
+.try-again-btn:hover{
+  cursor: pointer;
+  background-color: var(--results-text-color);
+  color: white;
+}
+
+.btn{
+  transition: ease;
+  transition-duration: 0.1s;
 }

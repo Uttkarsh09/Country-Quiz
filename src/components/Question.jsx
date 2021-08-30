@@ -3,7 +3,14 @@ import React, { useState } from "react";
 import Options from "./Option";
 
 function Question(props) {
-	const { question, options, answerIndex, genNewMCQ, questionType } = props;
+	const {
+		question,
+		options,
+		answerIndex,
+		genNewMCQ,
+		questionType,
+		setGameStatus,
+	} = props;
 	const [optionIndex, setOptionIndex] = useState({
 		correctOption: false,
 		wrongOption: false,
@@ -35,8 +42,13 @@ function Question(props) {
 	}
 
 	function handleNext() {
-		reset();
-		genNewMCQ();
+		console.log(wrongOption);
+		if (wrongOption !== false) {
+			setGameStatus("ended");
+		} else {
+			reset();
+			genNewMCQ();
+		}
 	}
 
 	const optionProps = {

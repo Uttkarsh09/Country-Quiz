@@ -1,7 +1,6 @@
 import React from "react";
 
-const Result = ({ score }) => {
-	score = 1;
+const Result = ({ score, resetGame }) => {
 	const resultImage = score ? "winning" : "loosing";
 	const resultScoreColor = score ? "green" : "red";
 
@@ -14,7 +13,14 @@ const Result = ({ score }) => {
 				<span className={`score ${resultScoreColor}`}>{score}</span>
 				correct answers
 			</p>
-			<button className="try-again-btn">Try again</button>
+			<button
+				className="try-again-btn"
+				onClick={() => {
+					resetGame();
+				}}
+			>
+				Try again
+			</button>
 		</div>
 	);
 };

@@ -1,11 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 
 const Option = ({ option, classes, imgSrc, optionAphabet, handleClick }) => {
 	return (
 		<li className={classes} onClick={handleClick}>
-			<h3>{optionAphabet}</h3>
+			<span>{optionAphabet}</span>
 			<span>{option}</span>
-			{imgSrc && <img src={imgSrc} className="icon" alt="" />}
+			<span>{imgSrc && <img src={imgSrc} className="icon" />}</span>
 		</li>
 	);
 };
@@ -34,10 +35,10 @@ const Options = ({
 					<Option
 						key={idx}
 						option={option}
-						classes={`option ${additionalOptionClass}`}
+						classes={`option btn ${additionalOptionClass}`}
 						imgSrc={imgSrc}
 						optionAphabet={String.fromCharCode(97 + idx).toUpperCase()}
-						handleClick={()=>handleAnswerSubmit(idx)}
+						handleClick={() => handleAnswerSubmit(idx)}
 					/>
 				);
 			})}
