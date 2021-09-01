@@ -69,4 +69,4 @@ function generateQuestion(countryInfo) {
 	return mcq;
 }
 
-exports.generateQuestion = generateQuestion;
+export { generateQuestion };
