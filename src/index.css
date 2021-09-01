@@ -92,7 +92,6 @@ body{
   right: 0;
   top: -3.4375rem;
   height: 6.25rem;
-  /* margin-top: -10px; */
 }
 
 .mcq-block{
@@ -102,15 +101,17 @@ body{
 
 .flag{
   max-height: 54px;
-  max-width: 84px;
+  max-width: 80px;
+  border: 1px solid rgb(48, 47, 47);
   border-radius: 4px;
-  margin: 5px;
+  margin: 5px 5px -20px 5px;
   align-content: center;
 }
 
 .question{
   font-size: var(--question-text-size);
   color: var(--question-text-color);
+  margin-top: 30px;
 }
 
 .options{
@@ -229,7 +230,7 @@ body{
 .about-me{
   font-family: arial;
   font-size: 0.875rem;
-  color: rgb(2, 2, 2);
+  color: white;
   position: absolute;
   bottom: 5px;
 
@@ -238,6 +239,22 @@ body{
   color :white;
 }
 
+.loader{
+  height: 60px;
+  width: 60px;
+  border: 1px solid white;
+  padding: 1px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.loading-ball{
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: white;
+}
 
 @media only screen and (max-width: 600px) {
   html{

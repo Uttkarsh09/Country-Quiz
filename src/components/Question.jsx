@@ -42,7 +42,6 @@ function Question(props) {
 	}
 
 	function handleNext() {
-		console.log(wrongOption);
 		if (wrongOption !== false) {
 			setGameStatus("ended");
 		} else {
@@ -68,7 +67,9 @@ function Question(props) {
 
 			<div className="mcq-block">
 				{questionType === 2 && <img src={props.flag} className="flag" alt="" />}
+
 				<h2 className="question">{question}</h2>
+
 				<Options {...optionProps} />
 				<div className="next-button-div">
 					<button hidden={correctOption === false} onClick={handleNext}>

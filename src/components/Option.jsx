@@ -1,24 +1,22 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
+import { motion } from "framer-motion";
 
 const Option = ({ option, classes, imgSrc, optionAphabet, handleClick }) => {
 	return (
-		<li className={classes} onClick={handleClick}>
+		<motion.li className={classes} onClick={handleClick}>
 			<span>{optionAphabet}</span>
 			<span>{option}</span>
 			<span>{imgSrc && <img src={imgSrc} className="icon" />}</span>
-		</li>
+		</motion.li>
 	);
 };
 
-const Options = ({
-	options,
-	correctOption,
-	wrongOption,
-	handleAnswerSubmit,
-}) => {
+const Options = (props) => {
+	const { options, correctOption, wrongOption, handleAnswerSubmit } = props;
+
 	return (
-		<ul className="options">
+		<motion.ul className="options">
 			{options.map((option, idx) => {
 				let additionalOptionClass = "",
 					imgSrc = "";
@@ -42,7 +40,7 @@ const Options = ({
 					/>
 				);
 			})}
-		</ul>
+		</motion.ul>
 	);
 };
 
